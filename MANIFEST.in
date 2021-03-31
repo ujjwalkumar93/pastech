@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pastech_app *.css
+recursive-include pastech_app *.csv
+recursive-include pastech_app *.html
+recursive-include pastech_app *.ico
+recursive-include pastech_app *.js
+recursive-include pastech_app *.json
+recursive-include pastech_app *.md
+recursive-include pastech_app *.png
+recursive-include pastech_app *.py
+recursive-include pastech_app *.svg
+recursive-include pastech_app *.txt
+recursive-exclude pastech_app *.pyc

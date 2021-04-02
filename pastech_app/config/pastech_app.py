@@ -12,13 +12,33 @@ def get_data():
                     "type": "doctype",
                     "name": "Mobile",
                     "doctype": "Mobile",
-                    "label": "Master Data",
                 },
                 {
                     "type": "doctype",
                     "name": "Brand",
                     "doctype": "Brand",
                 },
+                {
+                    "type": "doctype",
+                    "name": "Sales Invoice",
+                    "doctype": "Sales Invoice",
+                },
+            ]
+        },
+        {
+            "label": _("Data Import and Export"),
+            "icon": "octicon octicon-briefcase",
+            "items": [
+                {
+                    "type": "doctype",
+                    "name": "Data Import",
+                    "doctype": "Data Import",
+                },
+                {
+                    "type": "doctype",
+                    "name": "Data Export",
+                    "doctype": "Data Export",
+                }
             ]
         }
     ]

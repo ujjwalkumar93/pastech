@@ -1,11 +1,13 @@
 {
  "actions": [],
+ "allow_import": 1,
  "creation": "2021-03-31 22:40:36.949996",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "brand",
+  "brand_name",
   "mobiles"
  ],
  "fields": [
@@ -20,11 +22,17 @@
    "fieldtype": "Table",
    "label": "Mobiles",
    "options": "Mobile Details"
+  },
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "Brand Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-31 22:40:36.949996",
+ "modified": "2021-04-02 22:11:06.806031",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Mobile",

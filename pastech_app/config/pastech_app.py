@@ -20,7 +20,7 @@ def get_data():
                 },
                 {
                     "type": "doctype",
-                    "name": "Make Invoice",
+                    "name": "Sales Invoice",
                     "doctype": "Sales Invoice",
                 },
             ]

@@ -39,11 +39,13 @@ frappe.ui.form.on('Sales Invoice', {
 
 		})
 		
+	},
+	after_submit: function(frm){
+		//console.log("***************** submit")
 	}
 });
 frappe.ui.form.on("Sales Invoice Details", {
 	mobile_details_remove : function(frm){
-		console.log("******remove")
 		var table = frm.doc.mobile_details
 					var total = 0
 					table.map(item => {

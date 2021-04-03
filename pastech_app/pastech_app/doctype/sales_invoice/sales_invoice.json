@@ -12,7 +12,9 @@
   "date",
   "section_break_6",
   "scan_barcode",
-  "mobile_details"
+  "mobile_details",
+  "total_amount",
+  "amended_from"
  ],
  "fields": [
   {
@@ -56,11 +58,28 @@
    "fieldtype": "Table",
    "label": "Mobile Details",
    "options": "Sales Invoice Details"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Data",
+   "label": "Total Amount",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Invoice",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2021-04-02 22:08:04.726502",
+ "modified": "2021-04-03 22:01:04.846651",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Sales Invoice",

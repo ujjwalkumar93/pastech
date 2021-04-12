@@ -57,7 +57,8 @@
    "fieldname": "mobile_details",
    "fieldtype": "Table",
    "label": "Mobile Details",
-   "options": "Sales Invoice Details"
+   "options": "Sales Invoice Details",
+   "reqd": 1
   },
   {
    "fieldname": "total_amount",
@@ -79,7 +80,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2021-04-03 22:01:04.846651",
+ "modified": "2021-04-03 22:40:21.364585",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Sales Invoice",

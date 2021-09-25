@@ -19,4 +19,11 @@ def get_all_brands():
 
 @frappe.whitelist(allow_guest=True)
 def get_all_mobiles():
-    return frappe.db.get_all("Model",{},['*'])
+    all_models = frappe.db.get_all("Model",{},['name','parent','model_name'])
+    data = []
+    for model in all_models:
+        d = {}
+        d["name"] = model.get("model_name")
+        d["key"] = model.get("name")
+        data.append(d)
+    return data 

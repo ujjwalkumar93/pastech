@@ -23,7 +23,8 @@ def get_all_mobiles():
     data = []
     for model in all_models:
         d = {}
-        d["name"] = model.get("model_name")
+        phone = "{0}-{1}".format(model.get("parent"),model.get("model_name"))
+        d["name"] = phone
         d["key"] = model.get("name")
         data.append(d)
     return data 

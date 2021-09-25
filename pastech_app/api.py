@@ -19,4 +19,4 @@ def get_all_brands():
 
 @frappe.whitelist(allow_guest=True)
 def get_all_mobiles():
-    return frappe.db.get_all("Mobile",{},['*'])
+    return frappe.db.get_all("Model",{},['*'])

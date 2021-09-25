@@ -14,5 +14,5 @@ def create_customer_enquiry(name,phone,email,data):
         return False
 
 @frappe.whitelist(allow_guest=True)
-def get_all_branbds():
+def get_all_brands():
     return frappe.db.get_all("Brand",{},['*'])

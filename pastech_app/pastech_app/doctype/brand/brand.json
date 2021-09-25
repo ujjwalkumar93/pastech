@@ -5,18 +5,24 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "brand_name"
+  "brand_name",
+  "attach_logo"
  ],
  "fields": [
   {
    "fieldname": "brand_name",
    "fieldtype": "Data",
    "label": "Brand Name"
+  },
+  {
+   "fieldname": "attach_logo",
+   "fieldtype": "Attach",
+   "label": "Attach Logo"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-03-31 22:34:40.896789",
+ "modified": "2021-09-26 00:58:22.141097",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Brand",

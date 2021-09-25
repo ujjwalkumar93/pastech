@@ -5,18 +5,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "model_name",
   "ram",
   "rom",
   "processor"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name"
-  },
   {
    "fieldname": "ram",
    "fieldtype": "Data",
@@ -34,12 +28,18 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Processor"
+  },
+  {
+   "fieldname": "model_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2021-09-26 01:18:15.314026",
+ "modified": "2021-09-26 01:30:39.679669",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Model",

@@ -1,27 +1,26 @@
 {
  "actions": [],
- "allow_import": 1,
- "creation": "2021-03-31 22:40:36.949996",
+ "autoname": "field:brand_name",
+ "creation": "2021-09-26 01:28:02.003827",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "brand",
   "brand_name",
+  "brand_logo",
   "model"
  ],
  "fields": [
   {
-   "fieldname": "brand",
-   "fieldtype": "Link",
-   "label": "Brand",
-   "options": "Brand"
-  },
-  {
    "fieldname": "brand_name",
    "fieldtype": "Data",
    "label": "Brand Name",
-   "read_only": 1
+   "unique": 1
+  },
+  {
+   "fieldname": "brand_logo",
+   "fieldtype": "Attach",
+   "label": "Brand Logo"
   },
   {
    "fieldname": "model",
@@ -32,7 +31,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-26 01:17:07.681978",
+ "modified": "2021-09-26 01:29:39.026753",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Mobile",
@@ -53,5 +52,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "brand_name",
  "track_changes": 1
 }

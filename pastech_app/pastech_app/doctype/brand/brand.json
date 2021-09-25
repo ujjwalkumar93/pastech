@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "autoname": "field:brand_name",
  "creation": "2021-03-31 22:34:40.896789",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -12,7 +13,8 @@
   {
    "fieldname": "brand_name",
    "fieldtype": "Data",
-   "label": "Brand Name"
+   "label": "Brand Name",
+   "unique": 1
   },
   {
    "fieldname": "attach_logo",
@@ -22,7 +24,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-26 00:58:22.141097",
+ "modified": "2021-09-26 01:20:56.036724",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Brand",

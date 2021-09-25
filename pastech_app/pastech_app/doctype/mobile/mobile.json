@@ -8,7 +8,7 @@
  "field_order": [
   "brand",
   "brand_name",
-  "mobiles"
+  "model"
  ],
  "fields": [
   {
@@ -18,21 +18,21 @@
    "options": "Brand"
   },
   {
-   "fieldname": "mobiles",
-   "fieldtype": "Table",
-   "label": "Mobiles",
-   "options": "Mobile Details"
-  },
-  {
    "fieldname": "brand_name",
    "fieldtype": "Data",
    "label": "Brand Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Table",
+   "label": "Model",
+   "options": "Model"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-04-02 22:11:06.806031",
+ "modified": "2021-09-26 01:17:07.681978",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Mobile",

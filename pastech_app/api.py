@@ -3,7 +3,7 @@ import frappe
 @frappe.whitelist(allow_guest=True)
 def create_customer_enquiry(name,phone,email,data):
     doc = frappe.new_doc("Customer Enquiry")
-    doc.name = name
+    doc.name1 = name
     doc.mobile = phone
     doc.email = email
     doc.enquiry = data

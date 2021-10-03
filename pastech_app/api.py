@@ -8,10 +8,15 @@ def create_customer_enquiry(name,phone,email,data):
     doc.email = email
     doc.enquiry = data
     doc.insert()
+    frappe.db.commit()
     if doc.get("name"):
         return True
     else:
         return False
+
+@frappe.whitelist(allow_guest=True)
+def test():
+    return "Hello world"
 
 @frappe.whitelist(allow_guest=True)
 def get_all_brands():

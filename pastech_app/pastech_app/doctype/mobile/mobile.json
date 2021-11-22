@@ -1,37 +1,105 @@
 {
  "actions": [],
- "autoname": "field:brand_name",
- "creation": "2021-09-26 01:28:02.003827",
+ "allow_rename": 1,
+ "autoname": "format:{brand} {model_name} [{ram}GB RAM, {rom}GB Storage]",
+ "creation": "2021-11-22 21:52:22.990020",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "brand_name",
-  "brand_logo",
-  "model"
+  "brand",
+  "model_name",
+  "phone_image",
+  "ram",
+  "camera",
+  "column_break_5",
+  "rom",
+  "processor",
+  "battery",
+  "display",
+  "section_break_10",
+  "primary_condition_check",
+  "secondary_condition_check"
  ],
  "fields": [
   {
-   "fieldname": "brand_name",
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand",
+   "reqd": 1
+  },
+  {
+   "fieldname": "model_name",
    "fieldtype": "Data",
-   "label": "Brand Name",
-   "unique": 1
+   "label": "Model Name",
+   "reqd": 1
   },
   {
-   "fieldname": "brand_logo",
-   "fieldtype": "Attach",
-   "label": "Brand Logo"
+   "fieldname": "phone_image",
+   "fieldtype": "Attach Image",
+   "label": "Phone Image"
   },
   {
-   "fieldname": "model",
+   "fieldname": "ram",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "RAM",
+   "options": "\n2\n4\n6\n8\n12\n16",
+   "reqd": 1
+  },
+  {
+   "fieldname": "camera",
+   "fieldtype": "Data",
+   "label": "Camera"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rom",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "ROM",
+   "options": "\n8\n16\n32\n64\n128\n256\n512",
+   "reqd": 1
+  },
+  {
+   "fieldname": "processor",
+   "fieldtype": "Data",
+   "label": "Processor"
+  },
+  {
+   "fieldname": "battery",
+   "fieldtype": "Data",
+   "label": "Battery"
+  },
+  {
+   "fieldname": "display",
+   "fieldtype": "Data",
+   "label": "Display"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "primary_condition_check",
    "fieldtype": "Table",
-   "label": "Model",
-   "options": "Model"
+   "label": "Primary Condition Check",
+   "options": "Primary Condition Check"
+  },
+  {
+   "fieldname": "secondary_condition_check",
+   "fieldtype": "Table",
+   "label": "Secondary Condition Check",
+   "options": "Secondary Condition Check"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-09-26 01:29:39.026753",
+ "modified": "2021-11-22 22:14:48.929735",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Mobile",
@@ -52,6 +120,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "brand_name",
  "track_changes": 1
 }

@@ -24,12 +24,12 @@ def get_all_brands():
 
 @frappe.whitelist(allow_guest=True)
 def get_all_mobiles():
-    all_models = frappe.db.get_all("Model",{},['name','parent','model_name'])
-    data = []
-    for model in all_models:
-        d = {}
-        phone = "{0}-{1}".format(model.get("parent"),model.get("model_name"))
-        d["name"] = phone
-        d["key"] = model.get("name")
-        data.append(d)
-    return data 
+    return frappe.db.get_all("Mobile",{},['name'])
+
+@frappe.whitelist(allow_guest=True)
+def get_primary_condition_check(mobile):
+    return frappe.get_all("Primary Condition Check",{"parent":mobile},["questation","valuation"])
+
+@frappe.whitelist(allow_guest=True)
+def get_primary_secondary_check(mobile):
+    return frappe.get_all("Secondary Condition Check",{"parent":mobile},["questation","valuation"])

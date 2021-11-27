@@ -17,6 +17,7 @@
   "processor",
   "battery",
   "display",
+  "maximum_price",
   "section_break_10",
   "primary_condition_check",
   "secondary_condition_check"
@@ -95,11 +96,16 @@
    "fieldtype": "Table",
    "label": "Secondary Condition Check",
    "options": "Secondary Condition Check"
+  },
+  {
+   "fieldname": "maximum_price",
+   "fieldtype": "Currency",
+   "label": "Maximum Price"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-11-22 22:14:48.929735",
+ "modified": "2021-11-27 22:31:36.655293",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Mobile",

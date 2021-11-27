@@ -24,7 +24,7 @@ def get_all_mobiles():
     return frappe.db.get_all("Mobile",{},['name','model_name'])
 @frappe.whitelist(allow_guest=True)
 def get_mobile_info(mobile):
-    return frappe.db.get_value("Mobile",{'name':mobile},['name','model_name','ram','rom','camera','phone_image','display','maximum_price'])
+    return frappe.db.get_value("Mobile",{'name':mobile},['name','model_name','ram','rom','camera','phone_image','display','maximum_price'],as_dict = True)
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_condition_check(mobile):

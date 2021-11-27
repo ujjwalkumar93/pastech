@@ -14,17 +14,14 @@ def create_customer_enquiry(name,phone,email,data):
     else:
         return False
 
-@frappe.whitelist(allow_guest=True)
-def test():
-    return "Hello world"
 
 @frappe.whitelist(allow_guest=True)
 def get_all_brands():
-    return frappe.db.get_all("Mobile",{},['*'])
+    return frappe.db.get_all("Brand",{},['brand_name','brand_logo'])
 
 @frappe.whitelist(allow_guest=True)
 def get_all_mobiles():
-    return frappe.db.get_all("Mobile",{},['name','ram','rom'])
+    return frappe.db.get_all("Mobile",{},['name','model_name','ram','rom','camera'])
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_condition_check(mobile):

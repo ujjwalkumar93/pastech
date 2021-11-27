@@ -17,7 +17,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "PasTech",
+   "label": "Master Data",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -43,6 +43,32 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Website User",
+   "link_to": "Website User",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Appointment",
+   "link_to": "Appointment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Sales Invoice",
    "link_to": "Sales Invoice",
    "link_type": "DocType",
@@ -52,14 +78,22 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Customer Enquiry",
+   "label": "Support",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Enquiey",
    "link_to": "Customer Enquiry",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2021-09-25 04:03:59.020113",
+ "modified": "2021-11-27 23:32:37.754644",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "PasTech",

@@ -1,7 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2021-11-22 22:42:39.998062",
+ "autoname": "field:email",
+ "creation": "2021-11-27 23:14:37.543647",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -20,6 +21,11 @@
    "label": "Full Name"
   },
   {
+   "fieldname": "gmail_uid",
+   "fieldtype": "Read Only",
+   "label": "Gmail UID"
+  },
+  {
    "fieldname": "mobile",
    "fieldtype": "Data",
    "label": "Mobile"
@@ -27,7 +33,8 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "unique": 1
   },
   {
    "fieldname": "address_section",
@@ -39,19 +46,14 @@
    "fieldtype": "Table",
    "label": "Address List",
    "options": "User Address"
-  },
-  {
-   "fieldname": "gmail_uid",
-   "fieldtype": "Read Only",
-   "label": "Gmail UID"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-11-22 22:54:32.949009",
+ "modified": "2021-11-27 23:14:37.543647",
  "modified_by": "Administrator",
  "module": "Pastech App",
- "name": "Online User",
+ "name": "Website User",
  "owner": "Administrator",
  "permissions": [
   {

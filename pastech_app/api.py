@@ -33,3 +33,46 @@ def get_primary_condition_check(mobile):
 @frappe.whitelist(allow_guest=True)
 def get_primary_secondary_check(mobile):
     return frappe.get_all("Secondary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no"])
+
+@frappe.whitelist(allow_guest=True)
+def create_website_user(email,gmail_uid,full_name):
+    user = frappe.get_doc("Website User",email)
+    if user:
+        return "User already exist"
+    else:
+        usr_doc = frappe.new_doc("Website User")
+        usr_doc.full_name = full_name
+        usr_doc.gmail_uid = gmail_uid
+        usr_doc.email = email
+        usr_doc.insert()
+        return "User created"
+# @frappe.whitelist(allow_guest=True)
+# def modify_website_user(email,full_name):
+
+
+@frappe.whitelist(allow_guest=True)
+def add_address(email,full_name,mobile,full_address,city,postal_code,state):
+    user = frappe.get_doc("Website User",email)
+    if user:
+        is_this_default_add = False
+        if len(user.get("address_list")) == 0:
+            is_this_default_add = True
+        user.append("address_list", {
+            "full_name" : full_name,
+            "mobile" : mobile,
+            "full_address" : full_address,
+            "city" : city,
+            "postal_code" : postal_code,
+            "state" : state,
+            "enable" : is_this_default_add
+        })
+        user.save()
+
+@frappe.whitelist(allow_guest=True)
+def modify_address(email,full_name,mobile,full_address,city,postal_code,state,add_doc_name):
+    q = "update `tabAddress List` set full_name = {0},mobile = {1}, full_address = {2}, city = {3}, postal_code = {4}, state = {5}, email = {6} where name = {7};".format(full_name,mobile,full_address,city,postal_code,state,email,add_doc_name)
+    frappe.db.sql(q)
+    frappe.db.commit()
+    return "Address Updated"
+
+    

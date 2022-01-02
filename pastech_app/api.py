@@ -28,11 +28,11 @@ def get_mobile_info(mobile):
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_condition_check(mobile):
-    return frappe.get_all("Primary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no"])
+    return frappe.get_all("Primary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_secondary_check(mobile):
-    return frappe.get_all("Secondary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no"])
+    return frappe.get_all("Secondary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])
 
 @frappe.whitelist(allow_guest=True)
 def create_website_user(email,gmail_uid,full_name):

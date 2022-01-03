@@ -33,8 +33,12 @@ def handle_website_user(email,name,password=None):
         usr = frappe.new_doc("User")
         usr.email = email
         usr.first_name = name
-        #usr.new_password = password
+        usr.new_password = password
         usr.insert()
+        except frappe.OutgoingEmailError:
+            print(frappe.get_traceback())
+            pass # email server not set, don't send email
+
 @frappe.whitelist(allow_guest=True)
 def get_primary_condition_check(mobile):
     data = frappe.get_all("Primary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])

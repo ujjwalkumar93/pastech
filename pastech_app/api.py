@@ -30,11 +30,12 @@ def handle_website_user(email,name,password=None):
     if not frappe.db.exists("Website User", {email:email}) and not password:
         return "password"
     else:
-        usr = frappe.new_doc("User")
-        usr.email = email
-        usr.first_name = name
-        usr.new_password = password
-        usr.insert()
+        try:
+            usr = frappe.new_doc("User")
+            usr.email = email
+            usr.first_name = name
+            usr.new_password = password
+            usr.insert()
         except frappe.OutgoingEmailError:
             print(frappe.get_traceback())
             pass # email server not set, don't send email

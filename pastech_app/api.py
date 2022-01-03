@@ -32,13 +32,19 @@ def get_primary_condition_check(mobile):
     que_list = []
     for d in data:
         d["y"] = False
-        d["n"] = True
+        d["n"] = False
         que_list.append(d)
     return que_list
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_secondary_check(mobile):
-    return frappe.get_all("Secondary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])
+    data =  frappe.get_all("Secondary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])
+    que_list = []
+    for d in data:
+        d["y"] = False
+        d["n"] = False
+        que_list.append(d)
+    return que_list
 
 @frappe.whitelist(allow_guest=True)
 def create_website_user(email,gmail_uid,full_name):

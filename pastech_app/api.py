@@ -28,7 +28,10 @@ def get_mobile_info(mobile):
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_condition_check(mobile):
-    return frappe.get_all("Primary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])
+    data = frappe.get_all("Primary Condition Check",{"parent":mobile},["questation","valuation","description","yes","no","name"])
+    data["y"] = False
+    data["n"] = True
+    return data
 
 @frappe.whitelist(allow_guest=True)
 def get_primary_secondary_check(mobile):

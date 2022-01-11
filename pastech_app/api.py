@@ -101,4 +101,13 @@ def modify_address(email,full_name,mobile,full_address,city,postal_code,state,ad
     frappe.db.commit()
     return "Address Updated"
 
+@frappe.whitelist(allow_guest=True)
+def estimate_buying_price(phone):
+    print("##########"*30)
+    doc = frappe.get_doc("Mobile",phone)
+    dep = 0.00
+    for d in doc.get("primary_condition_check"):
+        print(d.get("valuation"))
+        dep+=float(d.get("valuation"))
+    return doc.get("maximum_price") - (doc.get("maximum_price")*(dep/100))
     

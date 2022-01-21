@@ -1,4 +1,4 @@
-from tkinter.messagebox import YES
+#from tkinter.messagebox import YES
 import frappe
 
 @frappe.whitelist(allow_guest=True)
@@ -154,6 +154,10 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
             "mobile": address.get("mobile"),
             "city" : address.get("city")
         })
+
+def get_address(email):
+    usr = frappe.get_doc("Web User", {"email":email})
+    return usr.get("address_list")
         
 
         

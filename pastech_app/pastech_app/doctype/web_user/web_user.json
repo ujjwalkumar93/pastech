@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:email",
- "creation": "2021-11-27 23:14:37.543647",
+ "creation": "2022-01-22 02:39:50.394038",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -60,10 +60,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-01-22 02:30:35.221241",
+ "modified": "2022-01-22 02:39:50.394038",
  "modified_by": "Administrator",
  "module": "Pastech App",
- "name": "Website User",
+ "name": "Web User",
  "owner": "Administrator",
  "permissions": [
   {

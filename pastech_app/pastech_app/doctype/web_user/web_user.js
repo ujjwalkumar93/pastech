@@ -1,7 +1,7 @@
-// Copyright (c) 2021, Ujjwal kumar and contributors
+// Copyright (c) 2022, Ujjwal kumar and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Website User', {
+frappe.ui.form.on('Web User', {
 	// refresh: function(frm) {
 
 	// }

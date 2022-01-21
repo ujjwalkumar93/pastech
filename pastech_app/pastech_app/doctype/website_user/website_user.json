@@ -12,7 +12,8 @@
   "mobile",
   "email",
   "address_section",
-  "address_list"
+  "address_list",
+  "amended_from"
  ],
  "fields": [
   {
@@ -46,11 +47,20 @@
    "fieldtype": "Table",
    "label": "Address List",
    "options": "User Address"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Website User",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-11-27 23:14:37.543647",
+ "modified": "2022-01-22 02:30:35.221241",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Website User",

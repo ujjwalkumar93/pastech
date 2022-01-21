@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "creation": "2022-01-20 00:57:43.964431",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "questation",
+  "yes",
+  "no",
+  "depreciation"
+ ],
+ "fields": [
+  {
+   "fieldname": "questation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Questation"
+  },
+  {
+   "default": "0",
+   "fieldname": "yes",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Yes"
+  },
+  {
+   "default": "0",
+   "fieldname": "no",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "No"
+  },
+  {
+   "fieldname": "depreciation",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Depreciation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-01-20 00:57:43.964431",
+ "modified_by": "Administrator",
+ "module": "Pastech App",
+ "name": "Secondary Condition",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

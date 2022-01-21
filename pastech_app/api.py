@@ -1,3 +1,4 @@
+from tkinter.messagebox import YES
 import frappe
 
 @frappe.whitelist(allow_guest=True)
@@ -112,6 +113,48 @@ def estimate_buying_price(phone):
         d["valuation"] = cond.get("valuation")
         data.append(d)
     return data
+
+@frappe.whitelist()
+def create_appointment(user,mobile,doa,slot,primary_condition,secondary_condition,address_id,estimated_price):
+    address = frappe.get_value("")
+    doc = frappe.new_doc("Appointment")
+    doc.user = user
+    doc.mobile = mobile
+    doc.doa = doa
+    doc.appointment_slot = slot
+    for i in primary_condition:
+        yes = False
+        no = False
+        if i.get("yes"):
+            yes = True
+        if i.get("no"):
+            yes = False
+        doc.append("primary_condition", {
+            "questation" : i.get("que"),
+            "yes" : yes,
+            "no" : no,
+            "depreciation" : i.get("dep")
+        })
+
+    for i in secondary_condition:
+        yes = False
+        no = False
+        if i.get("yes"):
+            yes = True
+        if i.get("no"):
+            yes = False
+        doc.append("secondary_condition", {
+            "questation" : i.get("que"),
+            "yes" : yes,
+            "no" : no,
+            "depreciation" : i.get("dep")
+        })
+    doc.append("user_address", {
+            "full_name": address.get("full_name"),
+            "mobile": address.get("mobile"),
+            "city" : address.get("city")
+        })
+        
 
         
     

@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-01-22 23:48:20.548582",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "slot_section",
+  "slot",
+  "postal_details_section",
+  "postal_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "slot_section",
+   "fieldtype": "Section Break",
+   "label": "Slot"
+  },
+  {
+   "fieldname": "slot",
+   "fieldtype": "Table",
+   "label": "Slot",
+   "options": "Slot Details"
+  },
+  {
+   "fieldname": "postal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Postal Details"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Table",
+   "label": "Postal Code",
+   "options": "Postal Code"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-01-22 23:48:40.362222",
+ "modified_by": "Administrator",
+ "module": "Pastech App",
+ "name": "Portal Setitngs",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

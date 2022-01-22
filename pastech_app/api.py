@@ -154,7 +154,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
             "mobile": address.get("mobile"),
             "city" : address.get("city")
         })
-@frappe.whitelist()
+@frappe.whitelist(allow_guest = True)
 def get_address(email):
     usr = frappe.get_doc("Web User", {"email":email})
     return usr.get("address_list")

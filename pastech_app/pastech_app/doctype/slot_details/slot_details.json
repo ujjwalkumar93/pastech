@@ -1,31 +1,30 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2021-12-29 01:11:31.706887",
+ "creation": "2022-01-22 23:40:47.260364",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "postal_code"
+  "slot"
  ],
  "fields": [
   {
-   "fieldname": "postal_code",
+   "fieldname": "slot",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Postal Code"
+   "label": "Slot"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-01-22 23:49:09.021122",
+ "modified": "2022-01-22 23:49:23.710688",
  "modified_by": "Administrator",
  "module": "Pastech App",
- "name": "Postal Code",
+ "name": "Slot Details",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
- "sort_order": "DESC",
- "track_changes": 1
+ "sort_order": "DESC"
 }

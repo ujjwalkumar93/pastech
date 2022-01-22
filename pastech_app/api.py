@@ -152,7 +152,8 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
     doc.append("user_address", {
             "full_name": address.get("full_name"),
             "mobile": address.get("mobile"),
-            "city" : address.get("city")
+            "city" : address.get("city"),
+            "postal_code" :"123"
         })
     doc.estimated_price = estimated_price
     doc.insert()

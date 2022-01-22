@@ -124,7 +124,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
     doc.appointment_slot = slot
     
     for i in primary_condition:
-        i = json.loads(i)
+        # i = json.loads(i)
         yes = False
         no = False
         if i.get("y"):
@@ -139,7 +139,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
         })
 
     for i in secondary_condition:
-        i = json.loads(i)
+        # i = json.loads(i)
         yes = False
         no = False
         if i.get("y"):

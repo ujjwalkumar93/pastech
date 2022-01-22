@@ -1,6 +1,6 @@
 #from tkinter.messagebox import YES
 import frappe
-
+import json
 @frappe.whitelist(allow_guest=True)
 def create_customer_enquiry(name,phone,email,data):
     doc = frappe.new_doc("Customer Enquiry")
@@ -122,7 +122,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
     doc.mobile = mobile
     doc.doa = doa
     doc.appointment_slot = slot
-    for i in primary_condition:
+    for i in json.loads(primary_condition):
         yes = False
         no = False
         if i.get("yes"):
@@ -136,7 +136,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
             "depreciation" : i.get("dep")
         })
 
-    for i in secondary_condition:
+    for i in json.loads(secondary_condition):
         yes = False
         no = False
         if i.get("yes"):

@@ -114,7 +114,7 @@ def estimate_buying_price(phone):
         data.append(d)
     return data
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest = True)
 def create_appointment(user,mobile,doa,slot,primary_condition,secondary_condition,address_id,estimated_price):
     address = frappe.get_value("")
     doc = frappe.new_doc("Appointment")
@@ -158,6 +158,33 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
 def get_address(email):
     usr = frappe.get_doc("Web User", {"email":email})
     return usr.get("address_list")
+@frappe.whitelist(allow_guest = True)
+def check_postal_code(code):
+    data = False
+    doc = frappe.get_doc("Portal Setitngs")
+    for i in doc.get("postal_code"):
+        if i.get("postal_code") == code:
+            data = True
+    return data
+@frappe.whitelist(allow_guest = True)
+def get_postal_code():
+    data = []
+    doc = frappe.get_doc("Portal Setitngs")
+    for i in doc.get("postal_code"):
+        data.append(i.get("postal_code"))
+    return data
+
+@frappe.whitelist(allow_guest = True)
+def get_slot():
+    data = []
+    doc = frappe.get_doc("Portal Setitngs")
+    for i in doc.get("slot"):
+        data.append({
+            "time": i.get("slot"),
+            "color": "#ffffff"
+        })
+    return data
+
         
 
         

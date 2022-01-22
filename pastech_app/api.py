@@ -196,6 +196,10 @@ def get_slot():
         })
     return data
 
+@frappe.whitelist(allow_guest = True)
+def get_order_history(user):
+    return frappe.get_all("Appointment",{"user":user},'*')
+
         
 
         

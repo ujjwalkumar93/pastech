@@ -122,34 +122,35 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
     doc.mobile = mobile
     doc.doa = doa
     doc.appointment_slot = slot
+    
     for i in primary_condition:
         i = json.loads(i)
         yes = False
         no = False
-        if i.get("yes"):
+        if i.get("y"):
             yes = True
-        if i.get("no"):
+        if i.get("n"):
             yes = False
         doc.append("primary_condition", {
-            "questation" : i.get("que"),
+            "questation" : i.get("questation"),
             "yes" : yes,
             "no" : no,
-            "depreciation" : i.get("dep")
+            "depreciation" : i.get("valuation")
         })
 
     for i in secondary_condition:
         i = json.loads(i)
         yes = False
         no = False
-        if i.get("yes"):
+        if i.get("y"):
             yes = True
-        if i.get("no"):
+        if i.get("n"):
             yes = False
         doc.append("secondary_condition", {
-            "questation" : i.get("que"),
+            "questation" : i.get("questation"),
             "yes" : yes,
             "no" : no,
-            "depreciation" : i.get("dep")
+            "depreciation" : i.get("valuation")
         })
     doc.append("user_address", {
             "full_name": address.get("full_name"),

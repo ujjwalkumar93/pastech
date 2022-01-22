@@ -157,8 +157,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
         })
     doc.estimated_price = estimated_price
     doc.insert()
-    doc.save()
-    doc.reload()
+    doc.submit()
     return doc.name
 @frappe.whitelist(allow_guest = True)
 def get_address(email):

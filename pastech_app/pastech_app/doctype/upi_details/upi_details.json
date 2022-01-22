@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "creation": "2022-01-23 03:42:55.201581",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "upi"
+ ],
+ "fields": [
+  {
+   "fieldname": "upi",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "UPI"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-01-23 03:45:05.810104",
+ "modified_by": "Administrator",
+ "module": "Pastech App",
+ "name": "UPI Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

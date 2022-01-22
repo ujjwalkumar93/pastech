@@ -9,11 +9,14 @@
  "field_order": [
   "full_name",
   "gmail_uid",
+  "password",
   "mobile",
   "email",
   "address_section",
   "address_list",
-  "amended_from"
+  "payment_channel_section",
+  "upi",
+  "bank"
  ],
  "fields": [
   {
@@ -49,18 +52,32 @@
    "options": "User Address"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Website User",
-   "print_hide": 1,
+   "fieldname": "payment_channel_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Channel"
+  },
+  {
+   "fieldname": "upi",
+   "fieldtype": "Table",
+   "label": "UPI",
+   "options": "UPI Details"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Table",
+   "label": "Bank",
+   "options": "Bank Details"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-01-22 02:39:50.394038",
+ "modified": "2022-01-23 03:46:34.529831",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Web User",

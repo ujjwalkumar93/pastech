@@ -17,6 +17,7 @@
   "pickup_location_section",
   "user_address",
   "estimated_price",
+  "time_stamp",
   "amended_from"
  ],
  "fields": [
@@ -87,12 +88,17 @@
    "fieldname": "estimated_price",
    "fieldtype": "Currency",
    "label": "Estimated Price"
+  },
+  {
+   "fieldname": "time_stamp",
+   "fieldtype": "Read Only",
+   "label": "Time Stamp"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-01-22 02:58:07.393035",
+ "modified": "2022-01-23 03:47:08.179180",
  "modified_by": "Administrator",
  "module": "Pastech App",
  "name": "Appointment",

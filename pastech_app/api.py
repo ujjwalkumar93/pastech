@@ -115,51 +115,55 @@ def estimate_buying_price(phone):
     return data
 
 @frappe.whitelist(allow_guest = True)
-def create_appointment(user,mobile,doa,slot,primary_condition,secondary_condition,address_id,estimated_price):
+def create_appointment(user,mobile,doa,slot,primary_condition,secondary_condition,address_id,estimated_price,time_stamp):
     address = frappe.get_doc("User Address",address_id)
-    doc = frappe.new_doc("Appointment")
-    doc.user = user
-    doc.mobile = mobile
-    doc.doa = doa
-    doc.appointment_slot = slot
-    
-    for i in json.loads(primary_condition):
-        yes = False
-        no = False
-        if i.get("y"):
-            yes = True
-        if i.get("n"):
+    old_doc = frappe.get_doc("Appointment",{"time_stamp":time_stamp,"user":user})
+    if not old_doc:
+        doc = frappe.new_doc("Appointment")
+        doc.user = user
+        doc.mobile = mobile
+        doc.doa = doa
+        doc.appointment_slot = slot
+        
+        for i in json.loads(primary_condition):
             yes = False
-        doc.append("primary_condition", {
-            "questation" : i.get("questation"),
-            "yes" : yes,
-            "no" : no,
-            "depreciation" : i.get("valuation")
-        })
+            no = False
+            if i.get("y"):
+                yes = True
+            if i.get("n"):
+                yes = False
+            doc.append("primary_condition", {
+                "questation" : i.get("questation"),
+                "yes" : yes,
+                "no" : no,
+                "depreciation" : i.get("valuation")
+            })
 
-    for i in json.loads(secondary_condition):
-        yes = False
-        no = False
-        if i.get("y"):
-            yes = True
-        if i.get("n"):
+        for i in json.loads(secondary_condition):
             yes = False
-        doc.append("secondary_condition", {
-            "questation" : i.get("questation"),
-            "yes" : yes,
-            "no" : no,
-            "depreciation" : i.get("valuation")
-        })
-    doc.append("user_address", {
-            "full_name": address.get("full_name"),
-            "mobile": address.get("mobile"),
-            "city" : address.get("city"),
-            "postal_code" :"123"
-        })
-    doc.estimated_price = estimated_price
-    doc.insert(ignore_permissions = True)
-    doc.submit()
-    return doc.name
+            no = False
+            if i.get("y"):
+                yes = True
+            if i.get("n"):
+                yes = False
+            doc.append("secondary_condition", {
+                "questation" : i.get("questation"),
+                "yes" : yes,
+                "no" : no,
+                "depreciation" : i.get("valuation")
+            })
+        doc.append("user_address", {
+                "full_name": address.get("full_name"),
+                "mobile": address.get("mobile"),
+                "city" : address.get("city"),
+                "postal_code" :"123"
+            })
+        doc.estimated_price = estimated_price
+        doc.insert(ignore_permissions = True)
+        doc.submit()
+        return doc.name
+    else:
+        return False
 @frappe.whitelist(allow_guest = True)
 def get_address(email):
     usr = frappe.get_doc("Web User", {"email":email})

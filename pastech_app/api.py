@@ -200,6 +200,10 @@ def get_slot():
 def get_order_history(user):
     return frappe.get_all("Appointment",{"user":user},['mobile',"doa","estimated_price"])
 
+@frappe.whitelist(allow_guest = True)
+def get_use_info(user):
+    doc = frappe.get_doc("Web User",{"email":user})
+    return doc.get("full_name")
         
 
         

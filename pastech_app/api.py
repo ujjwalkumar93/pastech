@@ -156,7 +156,7 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
             "postal_code" :"123"
         })
     doc.estimated_price = estimated_price
-    doc.insert()
+    doc.insert(ignore_permissions = True)
     doc.submit()
     return doc.name
 @frappe.whitelist(allow_guest = True)

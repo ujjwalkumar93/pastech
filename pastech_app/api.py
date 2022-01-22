@@ -116,7 +116,7 @@ def estimate_buying_price(phone):
 
 @frappe.whitelist(allow_guest = True)
 def create_appointment(user,mobile,doa,slot,primary_condition,secondary_condition,address_id,estimated_price):
-    address = frappe.get_value("")
+    address = frappe.get_value("User Address",address_id)
     doc = frappe.new_doc("Appointment")
     doc.user = user
     doc.mobile = mobile
@@ -154,6 +154,8 @@ def create_appointment(user,mobile,doa,slot,primary_condition,secondary_conditio
             "mobile": address.get("mobile"),
             "city" : address.get("city")
         })
+    doc.estimated_price = estimated_price
+    doc.insert()
 @frappe.whitelist(allow_guest = True)
 def get_address(email):
     usr = frappe.get_doc("Web User", {"email":email})

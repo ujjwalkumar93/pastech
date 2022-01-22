@@ -117,8 +117,8 @@ def estimate_buying_price(phone):
 @frappe.whitelist(allow_guest = True)
 def create_appointment(user,mobile,doa,slot,primary_condition,secondary_condition,address_id,estimated_price,time_stamp):
     address = frappe.get_doc("User Address",address_id)
-    old_doc = frappe.get_doc("Appointment",{"time_stamp":time_stamp,"user":user})
-    if not old_doc:
+    old_doc = frappe.get_all("Appointment",{"time_stamp":time_stamp,"user":user})
+    if len(old_doc) == 0:
         doc = frappe.new_doc("Appointment")
         doc.user = user
         doc.mobile = mobile

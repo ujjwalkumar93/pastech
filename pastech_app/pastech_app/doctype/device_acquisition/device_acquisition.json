@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "creation": "2022-01-23 08:58:56.187519",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "appointment",
+  "user",
+  "mobile",
+  "estimated_price",
+  "actual_price",
+  "remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "appointment",
+   "fieldtype": "Link",
+   "label": "Appointment",
+   "options": "Appointment"
+  },
+  {
+   "fetch_from": "appointment.full_name",
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Device Acquisition",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "appointment.mobile",
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fetch_from": "appointment.estimated_price",
+   "fieldname": "estimated_price",
+   "fieldtype": "Data",
+   "label": "Estimated Price"
+  },
+  {
+   "fieldname": "actual_price",
+   "fieldtype": "Data",
+   "label": "Actual Price"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-01-23 09:01:43.401354",
+ "modified_by": "Administrator",
+ "module": "Pastech App",
+ "name": "Device Acquisition",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

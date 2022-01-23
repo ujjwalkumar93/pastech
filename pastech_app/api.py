@@ -63,8 +63,8 @@ def get_secondary_condition_check(mobile):
 
 @frappe.whitelist(allow_guest=True)
 def create_website_user(email,gmail_uid,full_name):
-    user = frappe.get_doc("Web User",email)
-    if user:
+    user = frappe.get_all("Web User",{"email":email})
+    if len(user) == 0:
         return False
     else:
         usr_doc = frappe.new_doc("Web User")
@@ -73,6 +73,7 @@ def create_website_user(email,gmail_uid,full_name):
         usr_doc.email = email
         usr_doc.insert(ignore_permissions = True)
         return usr_doc.get('name')
+
 # @frappe.whitelist(allow_guest=True)
 # def modify_website_user(email,full_name):
 

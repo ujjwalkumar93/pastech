@@ -72,6 +72,7 @@ def create_website_user(email,gmail_uid,full_name):
         usr_doc.gmail_uid = gmail_uid
         usr_doc.email = email
         usr_doc.insert(ignore_permissions = True)
+        frappe.db.commit()
         return usr_doc.get('name')
 
 # @frappe.whitelist(allow_guest=True)
